@@ -2,171 +2,233 @@
 <Patch>
   <Operation Class="PatchOperationSequence">
     <operations>
-    <li Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
-    <value>
-        <size>(1,1)</size>
-    </value>
-</li>
-<li Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/graphicData/drawSize</xpath>
-    <value>
-        <drawSize>(1,1)</drawSize>
-    </value>
-</li>
-<li Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
-    <value>
-        <size>(1,1)</size>
-    </value>
-</li>
+      <!-- Ground Penetrating Scanner: 1x1 footprint and graphic -->
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
+      </li>
+      <!-- Allow operation under roofs. This is a ThingDef root-level field. -->
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/canBeUsedUnderRoof</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/canBeUsedUnderRoof</xpath>
+          <value>
+            <canBeUsedUnderRoof>true</canBeUsedUnderRoof>
+          </value>
+        </match>
+      </li>
+      <!-- Remove special placement workers, if the def has them. -->
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/placeWorkers</xpath>
+        <match Class="PatchOperationRemove">
+          <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/placeWorkers</xpath>
+        </match>
+      </li>
+      <!-- Relax terrain affordance requirement to Light. -->
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/terrainAffordanceNeeded</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/terrainAffordanceNeeded</xpath>
+          <value>
+            <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+          </value>
+        </match>
+      </li>
 
-<li Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/graphicData/drawSize</xpath>
-    <value>
-        <drawSize>(1,1)</drawSize>
-    </value>
-</li>
-
-<!-- 지붕 아래 사용 허용 -->
-<li Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/building/canBeUsedUnderRoof</xpath>
-    <value>
-        <canBeUsedUnderRoof>true</canBeUsedUnderRoof>
-    </value>
-</li>
-
-<!-- 지붕 및 기타 설치 제한 제거 -->
-<li Class="PatchOperationRemove">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/placeWorkers</xpath>
-</li>
-
-<!-- 지형 설치 조건 완화 -->
-<li Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/terrainAffordanceNeeded</xpath>
-    <value>
-        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    </value>
-</li>
-      <li Class="PatchOperationReplace">
+      <!-- Optional mod buildings: only patch a field when its target exists. -->
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
-      </li> 
-      <li Class="PatchOperationReplace">
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniMechTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
-      </li> 
-      <li Class="PatchOperationReplace">
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniMechTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniMechTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniMechTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniPowerTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniPowerTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniPowerTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniPowerTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniPsychicTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
-      </li> 
-      <li Class="PatchOperationReplace">
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniPsychicTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniPsychicTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniPsychicTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniPurifierTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniPurifierTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniPurifierTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniPurifierTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniTradeTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
-      </li> 
-      <li Class="PatchOperationReplace">i
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniTradeTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniTradeTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniTradeTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniTrueSightTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniTrueSightTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniTrueSightTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniTrueSightTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniAtmosphereTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
-      </li> 
-      <li Class="PatchOperationReplace">i
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniAtmosphereTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniAtmosphereTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniAtmosphereTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniClimateTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniClimateTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniClimateTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniClimateTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniGlowTower"]/size</xpath>
-        <value>
-          <size>(1,1)</size>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniGlowTower"]/size</xpath>
+          <value>
+            <size>(1,1)</size>
+          </value>
+        </match>
       </li>
-      <li Class="PatchOperationReplace">
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="HC_OmniGlowTower"]/graphicData/drawSize</xpath>
-        <value>
-          <drawSize>(1,1)</drawSize>
-        </value>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="HC_OmniGlowTower"]/graphicData/drawSize</xpath>
+          <value>
+            <drawSize>(1,1)</drawSize>
+          </value>
+        </match>
       </li>
     </operations>
   </Operation>
