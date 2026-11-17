@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+
+  <!-- 모든 건물의 실제 크기를 1x1로 변경 -->
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[building]/size</xpath>
+    <value>
+      <size>(1,1)</size>
+    </value>
+  </Operation> -->
+
+  <!-- 모든 건물의 그래픽 크기를 1x1로 변경 -->
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[building]/graphicData/drawSize</xpath>
+    <value>
+      <drawSize>(1,1)</drawSize>
+    </value>
+  </Operation> -->
+
   <Operation Class="PatchOperationSequence">
     <operations>
       <!-- Ground Penetrating Scanner: 1x1 footprint and graphic -->
