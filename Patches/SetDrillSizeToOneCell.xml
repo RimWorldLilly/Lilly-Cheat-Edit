@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li> 
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniMechTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li> 
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniMechTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniPowerTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniPowerTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniPsychicTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li> 
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniPsychicTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniPurifierTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniPurifierTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniTradeTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li> 
+      <li Class="PatchOperationReplace">i
+        <xpath>Defs/ThingDef[defName="HC_OmniTradeTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniTrueSightTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniTrueSightTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniAtmosphereTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li> 
+      <li Class="PatchOperationReplace">i
+        <xpath>Defs/ThingDef[defName="HC_OmniAtmosphereTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniClimateTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniClimateTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniGlowTower"]/size</xpath>
+        <value>
+          <size>(1,1)</size>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HC_OmniGlowTower"]/graphicData/drawSize</xpath>
+        <value>
+          <drawSize>(1,1)</drawSize>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
