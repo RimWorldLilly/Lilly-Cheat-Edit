@@ -4,6 +4,15 @@
     <operations>
       <!-- Ground Penetrating Scanner: 1x1 footprint and graphic -->
       <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/interactionCellOffset</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/interactionCellOffset</xpath>
+          <value>
+            <interactionCellOffset>(0,0,1)</interactionCellOffset>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
         <match Class="PatchOperationReplace">
           <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
