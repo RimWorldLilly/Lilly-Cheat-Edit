@@ -2,6 +2,52 @@
 <Patch>
   <Operation Class="PatchOperationSequence">
     <operations>
+    <li Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
+    <value>
+        <size>(1,1)</size>
+    </value>
+</li>
+<li Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/graphicData/drawSize</xpath>
+    <value>
+        <drawSize>(1,1)</drawSize>
+    </value>
+</li>
+<li Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/size</xpath>
+    <value>
+        <size>(1,1)</size>
+    </value>
+</li>
+
+<li Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/graphicData/drawSize</xpath>
+    <value>
+        <drawSize>(1,1)</drawSize>
+    </value>
+</li>
+
+<!-- 지붕 아래 사용 허용 -->
+<li Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/building/canBeUsedUnderRoof</xpath>
+    <value>
+        <canBeUsedUnderRoof>true</canBeUsedUnderRoof>
+    </value>
+</li>
+
+<!-- 지붕 및 기타 설치 제한 제거 -->
+<li Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/placeWorkers</xpath>
+</li>
+
+<!-- 지형 설치 조건 완화 -->
+<li Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/terrainAffordanceNeeded</xpath>
+    <value>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    </value>
+</li>
       <li Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName="RH_RepairHub_Large"]/size</xpath>
         <value>
