@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 모든 식물의 빛 사망 설정을 false로 변경 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[plant]/plant/diesToLight</xpath>
+    <value>
+      <diesToLight>false</diesToLight>
+    </value>
+  </Operation>
+
+  <!-- diesToLight 항목이 없는 식물에도 false를 추가 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[plant and not(plant/diesToLight)]/plant</xpath>
+    <value>
+      <diesToLight>false</diesToLight>
+    </value>
+  </Operation>
+</Patch>
